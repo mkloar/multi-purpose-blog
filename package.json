@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Miha",
   "dependencies": {
+    "dotenv": "^8.2.0",
+    "download": "^8.0.0",
     "gatsby": "^2.20.12",
     "gatsby-image": "^2.3.1",
     "gatsby-plugin-manifest": "^2.3.3",
@@ -19,6 +21,9 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
+    "rebass": "^4.0.7",
+    "request": "^2.88.2",
+    "slugify": "^1.4.0",
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
@@ -35,7 +40,12 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "get:content": "git clone git@github.com:mkloar/personal-blog-content.git",
+    "prepare:content": "cd personal-blog-content && mv content .. && cd ..",
+    "clear:temp": "rm -rf personal-blog-content",
+    "clear:content": "rm -rf content",
+    "generate:content": "npm run clear:content && npm run get:content && npm run prepare:content && npm run clear:temp"
   },
   "repository": {
     "type": "git",
