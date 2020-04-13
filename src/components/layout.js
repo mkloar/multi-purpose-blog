@@ -8,11 +8,15 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { Box, Heading, Text, Button } from "rebass"
+import { Title } from './blocks'
+import { MainContent } from '../theme'
+import { ArticleMetaData } from './ArticleMetaData'
 
 import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children, title }) => {
+export const Layout = ({ children, title }) => {
   /*const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -48,4 +52,17 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export const BlogContent = ({ post }) => {
+  return (
+    <Box>
+      {post.frontmatter && post.frontmatter.title && (
+        <Title uri={""}>{post.frontmatter.title}</Title>
+      )}
+      <MainContent>
+        <main dangerouslySetInnerHTML={{ __html: post.html }} />
+      </MainContent>
+
+      <ArticleMetaData frontmatter={post.frontmatter} />
+    </Box>
+  )
+}

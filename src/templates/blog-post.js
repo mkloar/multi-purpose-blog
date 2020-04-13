@@ -1,19 +1,31 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import { Template, BackButton } from '../theme'
+import { MainContent, BackButton } from '../theme'
+import { Title } from '../components/blocks'
+import { Box, Heading, Text, Button } from "rebass"
+import { BlogContent } from '../components/layout'
 
 const BlogPost = ({ data }) => {
-    const post = data.markdownRemark
+  const post = data.markdownRemark
 
-    return (
-        <Template>
-            <BackButton>
-                <Link to="/">Nazaj</Link>
-            </BackButton>
-            <h1>{post.frontmatter.title}</h1>
-            <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        </Template>
-    )
+  return (
+    <Box
+      sx={{
+        width: "100%",
+        minWidth: 0,
+        maxWidth: 768,
+        minHeight: "calc(100vh - 64px)",
+        mx: "auto",
+        px: [3, 4],
+        pb: 5,
+      }}
+    >
+      <BackButton>
+        <Link to="/">Nazaj</Link>
+      </BackButton>
+      <BlogContent post={post} />
+    </Box>
+  )
 }
 
 export const query = graphql`
@@ -22,6 +34,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        date
       }
     }
   }
