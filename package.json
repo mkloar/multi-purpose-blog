@@ -6,7 +6,6 @@
   "author": "Miha",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "download": "^8.0.0",
     "gatsby": "^2.20.12",
     "gatsby-image": "^2.3.1",
     "gatsby-plugin-manifest": "^2.3.3",
@@ -18,11 +17,10 @@
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-transformer-remark": "^2.7.1",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
     "rebass": "^4.0.7",
-    "request": "^2.88.2",
     "slugify": "^1.4.0",
     "styled-components": "^5.1.0"
   },
