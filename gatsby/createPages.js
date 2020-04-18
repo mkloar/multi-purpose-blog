@@ -16,6 +16,9 @@ module.exports = async ({ actions, graphql }) => {
                         fields {
                             slug
                         }
+                        frontmatter {
+                            title
+                        }
                     }
                 }
             }
@@ -36,9 +39,8 @@ module.exports = async ({ actions, graphql }) => {
 
 
     posts.forEach(( post, i ) => {
-        console.log(post.node.fields.slug)
-        const previous = i === posts.length - 1 ? null : posts[i + 1].post
-        const next = i === 0 ? null : posts[i - 1].post
+        const previous = i === posts.length - 1 ? null : posts[i + 1].node
+        const next = i === 0 ? null : posts[i - 1].node
 
         createPage({
             path: `/blog${post.node.fields.slug}`,
@@ -50,18 +52,5 @@ module.exports = async ({ actions, graphql }) => {
             }, // additional data can be passed via context
         })
     })
-
-    Array.from({ length: numPages }).forEach((_, i) => {
-        createPage({
-          path: i === 0 ? `/` : `/${i + 1}`,
-          component: resolve(__dirname, '../src/templates/main.js'),
-          context: {
-            limit: postsPerPage,
-            skip: i * postsPerPage,
-            numPages,
-            currentPage: i + 1
-          },
-        });
-    });
 
 }

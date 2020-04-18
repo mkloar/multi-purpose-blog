@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 export const Template = styled.div`
@@ -26,4 +25,5 @@ margin-left: 32px;
 margin-right: 32px;
 display: flex;
 justify-content: center;
+width: 100%;
 `

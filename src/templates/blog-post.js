@@ -1,44 +1,86 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import { MainContent, BackButton } from '../theme'
-import { Title } from '../components/blocks'
-import { Box, Heading, Text, Button } from "rebass"
-import BlogContent from '../components/blog-content'
-import Header from '../components/header'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
+  const siteTitle = data.site.siteMetadata.title
+  const { previous, next } = pageContext
 
   return (
-    <Layout>
-      <Box
-        sx={{
-          width: "100%",
-          minWidth: 0,
-          maxWidth: 768,
-          minHeight: "calc(100vh - 64px)",
-          mx: "auto",
-          px: [3, 4],
-          pb: 5,
-        }}
-      >
-        <BackButton>
-          <Link to="/">Nazaj</Link>
-        </BackButton>
-        <BlogContent post={post} />
-      </Box>
+    <Layout location={location} title={siteTitle}>
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description || post.excerpt}
+      />
+      <article>
+        <header>
+          <h1
+            style={{
+              marginBottom: 0,
+            }}
+          >
+            {post.frontmatter.title}
+          </h1>
+          <p
+            style={{
+              display: `block`,
+            }}
+          >
+            {post.frontmatter.date}
+          </p>
+        </header>
+        <hr />
+        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <hr />
+      </article> 
+
+      <nav>
+        <ul
+          style={{
+            display: `flex`,
+            flexWrap: `wrap`,
+            justifyContent: `space-between`,
+            listStyle: `none`,
+            padding: 0,
+          }}
+        >
+          <li>
+            {previous && (
+              <Link to={`/blog${previous.fields.slug}`} rel="prev">
+                ← {previous.frontmatter.title}
+              </Link>
+            )}
+          </li>
+          <li>
+            {next && (
+              <Link to={`/blog${next.fields.slug}`} rel="next">
+                {next.frontmatter.title} →
+              </Link>
+            )}
+          </li>
+        </ul>
+      </nav>
     </Layout>
   )
 }
 
 export const query = graphql`
   query($slug: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
       html
+      excerpt(pruneLength: 160)
       frontmatter {
         title
         date
+        description
       }
     }
   }
