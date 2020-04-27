@@ -44,3 +44,46 @@ export const Title = (props) => {
         </Text>
     )
 }
+
+export const Banner = (props) => (
+    <Box
+        {...props}
+    >
+        <Box
+            sx={{
+                // '*': { outline: '1px solid rgba(0, 255, 255, 0.5)', },
+                display: "flex",
+                flexDirection: "column",
+                maxWidth: "wide",
+                minHeight: "calc(10vh)",
+                mx: "auto",
+                px: 4,
+                py: [4, 5],
+                h1: {
+                    variant: "text.caps",
+                    fontSize: 3,
+                },
+                pre: {
+                    p: 0,
+                    mb: 0,
+                    bg: "transparent",
+                },
+            }}
+        >
+            {props.children}
+        </Box>
+    </Box>
+)
+
+export const Container = (props) => (
+    <Box
+        {...props}
+        sx={{
+            maxWidth: "wide",
+            mx: "auto",
+            px: 4,
+            textAlign: "left",
+            ...props.sx,
+        }}
+    />
+)

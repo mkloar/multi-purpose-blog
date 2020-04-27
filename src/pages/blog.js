@@ -30,6 +30,7 @@ const Blog = ({ data, location }) => {
                   }}
                 />
               </section>
+              <hr />
             </article>
           )
         })}
