@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Title, Banner } from '../components/blocks'
+import { Banner } from '../components/blocks'
 
 const Index = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title

@@ -28,7 +28,8 @@
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "markdownlint-cli": "^0.22.0"
   },
   "keywords": [
     "gatsby"
@@ -36,17 +37,12 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "npm run generate:content && gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "get:content": "git clone git@github.com:mkloar/personal-blog-content.git",
-    "prepare:content": "cd personal-blog-content && mv content .. && cd ..",
-    "clear:temp": "rm -rf personal-blog-content",
-    "clear:content": "rm -rf content",
-    "generate:content": "npm run clear:content && npm run get:content && npm run prepare:content && npm run clear:temp"
+    "docs:lint": "markdownlint ./content/**/*.md",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
     "type": "git",

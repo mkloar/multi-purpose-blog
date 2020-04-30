@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Heading, Text, Button } from "rebass"
+import { Box, Heading, Text } from "rebass"
 import { Link } from "gatsby"
 import slugify from "slugify"
 
