@@ -1,3 +1,3 @@
-# Personal blog
+# Multi purpose blog
 
-Personal blog made with gatsbyjs :D 
+Multi purpose blog made with Gatsbyjs :D
