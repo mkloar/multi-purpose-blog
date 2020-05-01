@@ -61,21 +61,6 @@ export const pageQuery = graphql`
           }
         }
       }
-      group(field: frontmatter___category) {
-        nodes {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            category
-            date
-            description
-            title
-          }
-        }
-        fieldValue
-      }
     }
   }
 `
