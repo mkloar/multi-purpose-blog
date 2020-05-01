@@ -13,7 +13,7 @@ const Index = ({ data, location }) => {
       <SEO title="All posts" />
       
       <Banner>Multi purpose blog made with love. Different categories like sports, funny, interesting etc. </Banner>
-       
+      
       <section>
         <Link to={'/blog'}>Visit blog</Link>
       </section>
