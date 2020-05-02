@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Blog = ({ data, location }) => {
+const Videos = ({ data, location }) => {
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
   
@@ -38,7 +38,7 @@ const Blog = ({ data, location }) => {
     )
 }
 
-export default Blog
+export default Videos
 
 export const pageQuery = graphql`
   query {
@@ -47,7 +47,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, filter: {fields: {root: {eq: "/blog/"}}}) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, filter: {fields: {root: {eq: "/videos/"}}}) {
       edges {
         node {
           excerpt
