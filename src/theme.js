@@ -27,3 +27,24 @@ display: flex;
 justify-content: center;
 width: 100%;
 `
+
+export const IndexContent = styled.div`
+display: flex;
+justify-content: center;
+width: 100%;
+padding: 10px;
+margin: 10px;
+`
+
+export const RootDir = styled.div`
+margin: 20px;
+box-sizing: border-box;
+box-shadow: 1px 1px 1px 1px #000;
+display: flex;
+justify-content: center;
+border: 1px solid;
+border-radius: 8px;
+min-width: 150px;
+min-height: 150px;
+align-items: center;
+`

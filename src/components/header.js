@@ -37,7 +37,7 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  siteTitle: `Gatsby testing`,
+  siteTitle: `Multi purpose blog`,
 }
 
 export default Header
