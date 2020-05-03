@@ -10,7 +10,7 @@ const Blog = ({ data, location }) => {
   
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title="All posts" />
+        <SEO title="All blog posts" />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -24,11 +24,7 @@ const Blog = ({ data, location }) => {
                 <small>{node.frontmatter.date}</small>
               </header>
               <section>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.frontmatter.description || node.excerpt,
-                  }}
-                />
+                <p>{ node.frontmatter.description || node.excerpt } </p>
               </section>
               <hr />
             </article>

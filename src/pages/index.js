@@ -25,9 +25,6 @@ const Index = ({ data, location }) => {
           </RootDir>
         ))}
       </IndexContent>
-      <section>
-        <Link to={'/blog'}>Visit blog</Link>
-      </section>
     </Layout>
   )
 }

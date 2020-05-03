@@ -34,6 +34,8 @@ justify-content: center;
 width: 100%;
 padding: 10px;
 margin: 10px;
+flex-direction: row;
+flex-wrap: wrap;
 `
 
 export const RootDir = styled.div`
@@ -44,7 +46,7 @@ display: flex;
 justify-content: center;
 border: 1px solid;
 border-radius: 8px;
-min-width: 150px;
-min-height: 150px;
+min-width: 200px;
+min-height: 200px;
 align-items: center;
 `
