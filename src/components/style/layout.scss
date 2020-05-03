@@ -242,6 +242,7 @@ h1 {
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
   line-height: 1.1;
+  text-transform: capitalize;
 }
 h2 {
   margin-left: 0;
@@ -259,6 +260,7 @@ h2 {
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
   line-height: 1.1;
+  text-transform: capitalize;
 }
 h3 {
   margin-left: 0;
@@ -276,6 +278,7 @@ h3 {
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
   line-height: 1.1;
+  text-transform: capitalize;
 }
 h4 {
   margin-left: 0;
@@ -293,6 +296,7 @@ h4 {
   text-rendering: optimizeLegibility;
   font-size: 1rem;
   line-height: 1.1;
+  text-transform: capitalize;
 }
 h5 {
   margin-left: 0;
@@ -310,6 +314,7 @@ h5 {
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
   line-height: 1.1;
+  text-transform: capitalize;
 }
 h6 {
   margin-left: 0;
@@ -327,6 +332,7 @@ h6 {
   text-rendering: optimizeLegibility;
   font-size: 0.78405rem;
   line-height: 1.1;
+  text-transform: capitalize;
 }
 hgroup {
   margin-left: 0;
@@ -624,5 +630,8 @@ pre tt:after {
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
+  }
+  iframe {
+    max-width: 95%;
   }
 }
