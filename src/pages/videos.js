@@ -3,13 +3,24 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { IndexContent, RootDir } from '../theme'
 
 const Videos = ({ data, location }) => {
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
+    const sections = data.allMarkdownRemark.distinct
   
     return (
       <Layout location={location} title={siteTitle}>
+        <IndexContent>
+          {sections.map((section) => (
+            <RootDir>
+              <Link to={`${location.pathname}${section}`}>
+                <h3>{ section.replace(/\//g, "") }</h3>
+              </Link>
+            </RootDir>
+          ))}
+        </IndexContent>
         <SEO title="All video posts" />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
@@ -57,6 +68,7 @@ export const pageQuery = graphql`
           }
         }
       }
+      distinct(field: frontmatter___section)
     }
   }
 `

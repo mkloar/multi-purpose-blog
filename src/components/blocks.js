@@ -51,7 +51,6 @@ export const Banner = (props) => (
     >
         <Box
             sx={{
-                // '*': { outline: '1px solid rgba(0, 255, 255, 0.5)', },
                 display: "flex",
                 flexDirection: "column",
                 maxWidth: "wide",
