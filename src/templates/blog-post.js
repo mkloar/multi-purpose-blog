@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import Reactions from '../components/reactions'
 
 const BlogPost = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -34,6 +35,7 @@ const BlogPost = ({ data, pageContext, location }) => {
         <hr />
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
+        <Reactions />
       </article> 
 
       <nav>
